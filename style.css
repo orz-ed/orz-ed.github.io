@@ -30,4 +30,14 @@ img {
   color: rgb(214, 156, 193);
 }
 
+body {
+  text-align: center;
+  border: 4px solid pink;
+}
+
 /* wow this is a css comment */
+/* 
+the reason i chose these styles is bc it reflects the content 
+its also absolutely blinding 
+(which is funnee)
+*/
