@@ -13,6 +13,10 @@ h2 {
 .genshin {
   color: rgb(179, 17, 17);
 }
+ul > li {
+  color: cadetblue;
+}
+
 #first-para {
   color: rgb(46, 15, 5);
 }
@@ -25,3 +29,5 @@ img {
 [data-email] {
   color: rgb(214, 156, 193);
 }
+
+/* wow this is a css comment */
