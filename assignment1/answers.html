@@ -1,0 +1,261 @@
+<!-- 
+    Name:Eden Wu
+    Student Number: s4003321
+    Subject code: OART1013
+    Teacher: Dr. Rohit Ashok Khot
+    Subject Title: Interactive Media 1 (2410)
+    Program: Bachelor of Design (Digital Media)
+    2024 Semester 1
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Answers</title>
+
+
+    <!-- Google fonts stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Passion+One:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <a href="/index.html">Home</a>
+      <a href="/answers.html">Answers</a>
+    </div>
+
+<!--I referenced https://www.w3schools.com/howto/howto_js_scroll_to_top.asp to create the back to top button, there is a 
+bit of java included but I determined that this was a necessary design choice so that the website is more comfortable to use-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
+<script>
+  let mybutton = document.getElementById("myBtn");
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>  
+
+<!-- I referenced https://stackoverflow.com/questions/51945463/how-can-i-link-button-in-html-to-another-class-div to create the buttons-->
+    <div class="center">
+      <div class="maincontent">
+        <div id="buttons" class="buttonbox">
+            <button onclick="window.location.href='#ewte'">Engaging with the experience</button>
+            <button onclick="window.location.href='#pgote'">Primary goal of the experience</button>
+            <button onclick="window.location.href='#hteiiw'">How the experience is interacted with</button>
+            <button onclick="window.location.href='#omfr'">Other media forms referenced</button>
+            <button onclick="window.location.href='#fas'">Frustration and satisfaction</button>
+        </div>
+
+        <div id="ewte" class="sectionbox">
+          <div class="section"><p>engaging with the experience</p></div>
+        </div>
+
+        <div class="block">
+            <h2>What was the first thing you paid attention to when interacting with
+                the experience?</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>  
+            The first thing I paid attention to was the interactive aspect of
+            the site that goes beyond the limits of the browser screen, with the
+            first prompt asking “resize your browser to make the sun rise”.
+            Changing the content along with the resizing of the browser was a
+            technique I had never encountered before and I found that very
+            intriguing.
+            </p>
+        </div>
+
+        <div class="block">
+            <h2>Spend two minutes with the experience and create a list of each of
+            your discrete actions.</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <ul>
+            <li>follow tutorial prompt and drag the wheel to progress</li>
+            <li>click around for anything interactive</li>
+            <li>drag around the scene to see more</li>
+            <li>enjoy the background music</li>
+            <li>read the poems available</li>
+            <li>held down click and immersed myself in the sound design</li>
+            </ul>
+        </div>
+
+        <div class="block">
+            <h2>
+            What part of the experience did you spend the most time engaging
+            with?
+            </h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+            I spent most time engaging with the “find the secret feature” aspect
+            of this experience. I really like interactive aspects of games and
+            sites where I can click on objects and receive a response in return,
+            it really helps me feel immersed in the environment by allowing
+            interactions between me and the scenery.
+            </p>
+        </div>
+
+        <div class="block">
+          <h2>What was the most common action in your two minute interaction with
+            the experience?</h2>
+          <div class="fakeimg" style="height: 200px">Image</div>
+          <p>
+            I was mostly dragging around the screen, after the tutorial
+            explained that there was “secret features” in the environment, it
+            prompted me to try and look around the entire scene to find that
+            interactive element. Other than that, I read the poems and moved along 
+            each page at around the same pace.
+          </p>
+        </div>
+
+        </div>
+        <div id="pgote" class="sectionbox">
+        <div class="section"><p>Primary goal of the experience</p></div>
+        </div>
+
+        <div class="block">
+            <h2>What is your impression of the intended primary goal of the interactive experience?</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+                To me, it seemed like the creator wanted the audience to experience 
+                “the essence of a summer day” through their perspective. In the 
+                introduction page, it is also stated that this site is “a tribute 
+                to the grand unveiling of the RM 07-01 coloured ceramics”, which 
+                after a quick search; is revealed to be a summer collection of 
+                bold-coloured wrist watches.
+            </p>
+        </div>
+
+        <div class="block">
+            <h2>What is your impression of how the experience should be interacted with over time? (For how long and how many different times)</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+            I feel that this is an experience that can last for quite a while,
+            I was able to spent around 10 minutes just to get through the very first section 
+            (finishing the Archipelago). However I’m unsure about the replayability of 
+            this site as it is quite a simple and straightforward experience. 
+            Furthermore, I find that there wasn’t anymore “secret features” in the later 
+            pages which made it less engaging.
+            </p>
+        </div>
+
+        </div>
+        <div id="hteiiw" class="sectionbox">
+        <div class="section"><p>How the experience is interacted with</p></div>
+        </div>
+
+        <div class="block">
+            <h2>What was the first thing you paid attention to when interacting with
+                the experience?</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+            The first thing I paid attention to was the interactive aspect of
+            the site that goes beyond the limits of the browser screen, with the
+            first prompt asking “resize your browser to make the sun rise”.
+            Changing the content along with the resizing of the browser was a
+            technique I had never encountered before and I found that very
+            intriguing.
+            </p>
+        </div>
+
+        <div class="block">
+            <h2>How does the interactive experience communicate how it should be interacted with over time?</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+            It mainly communicates its interactive elements through direct written 
+            instructions, implemented into a skippable tutorial. Due to the simple 
+            nature of the interactions, not much more is communicated after the 
+            tutorial is finished, it’s expected that the user understands how to 
+            interact with the rest of the experience once the tutorial is over. 
+            </p>
+        </div>
+
+        </div>
+        <div id="omfr" class="sectionbox">
+        <div class="section"><p>Other media forms referenced</p></div>
+        </div>
+
+        <div class="block">
+            <h2>What other media forms (digital or otherwise) does the experience reference?</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+            personally, this experience reminds me a lot of point and click games 
+            where you interact with elements on screen to progress the story. Although 
+            there was not a lot of interactivity in terms of the elements in the illustrations, 
+            the act of having the player experience the story at their own pace reminded me 
+            of the role playing games and visual novel genres.
+            </p>
+        </div>
+
+        <div class="block">
+            <h2>What does this reference/s communicate to you about how you should act when engaging with your research experience?</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+            The site referencing point and click games indicates to the user that they should 
+            drag around to explore and interact with the environment, this also makes the experience 
+            feel a lot more natural to people who has previous experience playing these sorts of games.
+            </p>
+        </div>
+
+        <div class="block">
+            <h2>What does this reference/s communicate to you about how you should feel when engaging with your research experience?</h2>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+            The reference to point and click games makes the user feel that they should explore and 
+            interact with everything in the environment, ensuring that the user is able to explore 
+            the environment fully and properly get immersed in the summer atmosphere.
+            </p>
+        </div>
+
+        </div>
+        <div id="fas" class="sectionbox">
+        <div class="section"><p>Frustration and satisfaction</p></div>
+        </div>
+
+        <div class="block">
+          <h2>What is the most frustrating part of the interaction to you and what makes that part frustrating?</h2>
+          <div class="fakeimg" style="height: 200px">Image</div>
+          <p>
+            It was actually slightly frustrating to be forced to drag around the environment rather 
+            than having the full environment on a full computer screen. Although I found the resizing 
+            browser interaction to be very creative and fun, it was quite irritating to have to drag 
+            around the screen to view the full environment.
+          </p>
+        </div>
+
+        <div class="block">
+          <h2>What is the most satisfying part of the interaction to you and what makes that part satisfying?</h2>
+          <div class="fakeimg" style="height: 200px">Image</div>
+          <p>
+          The most satisfying part of the interaction was finding the “secret features” (clicking on 
+          an object with a dim glow around the edges). The act of interacting with a part of the environment 
+          and receiving the “reward” of a short poem gives me a boost of dopamine from that feeling of 
+          discovery. 
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  
+
+  <div class="footer">
+    <h3>Eden Wu</h3>
+    <p>s4003321 Interactive Media Assignment 1</p>
+    <p>Thank you Rohit :D</p>
+  </div>
+</html>
