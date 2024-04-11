@@ -169,7 +169,7 @@ body {
   }
 }
 
-#buttons {
+button {
   background-color: rgb(237, 101, 162);
   border: none;
   color: white;
