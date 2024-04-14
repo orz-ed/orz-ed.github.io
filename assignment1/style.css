@@ -2,8 +2,15 @@
   box-sizing: border-box;
 }
 
-img {
+.header {
   width: 100%;
+}
+
+.pentrip {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
 }
 
 .container {
