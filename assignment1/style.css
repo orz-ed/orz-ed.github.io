@@ -8,6 +8,7 @@ img {
 
 .container {
   position: relative;
+  height: auto;
 }
 
 .overtext {
@@ -95,11 +96,11 @@ body {
 
 /* Add a blocking for text layout*/
 .block {
-  background: rgb(231, 172, 198);
+  background: rgb(255, 203, 227);
   background: radial-gradient(
     circle,
-    rgba(231, 172, 198, 1) 0%,
-    rgba(252, 235, 243, 1) 100%
+    rgb(255, 212, 229) 0%,
+    rgba(247, 241, 244, 1) 100%
   );
   padding: 20px;
   margin-top: 20px;
@@ -181,7 +182,7 @@ button {
 }
 
 button {
-  background-color: rgb(249, 219, 232);
+  background-color: rgb(254, 237, 244);
   color: black;
   border: 2px solid rgb(237, 101, 162);
 }
