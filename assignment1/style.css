@@ -206,11 +206,16 @@ button:hover {
   color: white;
 }
 
-.row {
+/* I referenced https://stackoverflow.com/questions/55557721/images-with-different-sizes-side-by-side to place
+the images side by side despite having different heights. I then referenced https://stackoverflow.com/questions/20626685/how-do-i-set-distance-between-flexbox-items
+to add a gap between the images for a cleaner look */
+.containerb {
   display: flex;
+  justify-content: center;
+  gap: 7%;
 }
 
-.column {
-  flex: 33.33%;
-  padding: 5px;
+.resize {
+  height: 300px;
+  width: auto;
 }
