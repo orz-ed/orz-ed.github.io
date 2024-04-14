@@ -25,6 +25,8 @@ the contrast and grayscale percentage to look nicer */
   height: auto;
 }
 
+/* Heading text over image. But since the image isn't a proper box I wasn't sure how to 
+make the text resize along with the image */
 .overtext {
   position: absolute;
   top: 50%;
@@ -37,6 +39,8 @@ the contrast and grayscale percentage to look nicer */
   color: rgb(237, 101, 162);
 }
 
+/* All body text is in this clean monospace font that makes each letter the same width
+which I really like */
 body {
   font-family: "Cutive Mono", monospace;
   font-weight: 400;
@@ -99,13 +103,6 @@ body {
 /* the main content */
 .maincontent {
   width: 100%;
-}
-
-/* test image */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
 }
 
 /* Add a blocking for text layout*/
