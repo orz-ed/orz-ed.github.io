@@ -46,7 +46,14 @@ body {
   font-weight: 400;
   font-style: normal;
   padding: 10px;
-  background: rgb(246, 235, 239);
+
+  /* I originally wanted to add a repeating pattern for the background, however, it only 
+  made the site look cluttered and messy so I just used a solid colour in the end.
+
+  background-image: url("img/hrtbg.jpeg");
+  background-size: 150px; */
+
+  background: rgb(255, 250, 252);
   color: rgb(74, 3, 34);
 }
 
@@ -108,8 +115,8 @@ body {
   background: rgb(255, 203, 227);
   background: radial-gradient(
     circle,
-    rgb(255, 212, 229) 0%,
-    rgba(247, 241, 244, 1) 100%
+    rgb(255, 221, 234) 0%,
+    rgb(252, 247, 250) 100%
   );
   padding: 20px;
   margin-top: 20px;
