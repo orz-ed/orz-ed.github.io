@@ -145,6 +145,11 @@ body {
   clear: both;
 }
 
+/* Link colour */
+a {
+  color: rgb(237, 101, 162);
+}
+
 /* Footer */
 .footer {
   padding: 20px;
