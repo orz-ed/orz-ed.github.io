@@ -48,10 +48,10 @@ body {
   padding: 10px;
 
   /* I originally wanted to add a repeating pattern for the background, however, it only 
-  made the site look cluttered and messy so I just used a solid colour in the end.
+  made the site look cluttered and messy so I just used a solid colour in the end. */
 
-  background-image: url("img/hrtbg.jpeg");
-  background-size: 150px; */
+  /* background-image: url("img/hlwhrt.jpeg");
+  background-size: 55px; */
 
   background: rgb(255, 250, 252);
   color: rgb(74, 3, 34);
@@ -121,6 +121,7 @@ body {
   padding: 20px;
   margin-top: 20px;
 }
+
 .buttonbox {
   margin: auto;
   display: flex;
@@ -225,4 +226,12 @@ to add a gap between the images for a cleaner look */
 .resize {
   height: 300px;
   width: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
 }
