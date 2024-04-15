@@ -221,6 +221,7 @@ to add a gap between the images for a cleaner look */
   display: flex;
   justify-content: center;
   gap: 7%;
+  overflow: auto;
 }
 
 .resize {
