@@ -41,6 +41,8 @@ function toggleSound() {
   }
 }
 
+// -------------------------------
+
 myVideo.addEventListener("timeupdate", updateProgressBar);
 
 const progressBarFill = document.querySelector("#progress-bar-fill");
@@ -50,4 +52,39 @@ function updateProgressBar() {
   const progress = (myVideo.currentTime / myVideo.duration) * 100;
   progressBarFill.style.width = progress + "%";
   console.log(progress);
+}
+
+// -------------------------------
+
+const step1Button = document.querySelector("#step1btn");
+console.log(step1Button);
+step1Button.addEventListener("click", gotoStep1);
+
+function gotoStep1() {
+  myVideo.currentTime = 16.0;
+}
+
+const step2Button = document.querySelector("#step2btn");
+console.log(step2Button);
+step2Button.addEventListener("click", gotoStep2);
+
+function gotoStep2() {
+  myVideo.currentTime = 43.0;
+}
+
+// -------------------------------
+
+myVideo.addEventListener("dblclick", goFullcreen);
+
+const fullscreenBtn = document.querySelector("#fullscreenbtn");
+console.log(fullscreenBtn);
+
+fullscreenBtn.addEventListener("click", goFullcreen);
+
+function goFullcreen() {
+  if (!document.fullscreenElement) {
+    myVideo.requestFullscreen();
+  } else {
+    document.exitFullscreen;
+  }
 }
