@@ -26,10 +26,12 @@ I went with three section structure
   <body>
     <h1>media player example</h1>
     <div class="outer">
-      <!-- <video src="files/stardust.mp4"></video> -->
-      <video
-        src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
-      ></video>
+      <section class="video-contanier">
+        <video id="my-video" src="files/stardust.mp4"></video>
+      </section>
+      <section class="video-controls">
+        <button><img src="files/playbtn.png" id="playpausebtn" /></button>
+      </section>
     </div>
   </body>
 </html>
