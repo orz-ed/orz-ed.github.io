@@ -18,21 +18,20 @@ I went with three section structure
     <script src="script.js" defer></script>
   </head>
   <body>
-    <section class = audiocontrols>
-        <audio src="files/calmaudio.mp3" id="calmaudio"></audio>
-        
-        <button id="play-button">play audio pls</audio></button>
-        <button id="pause-button">pls stop</button>
+    <section class="audio-contanier">
+      <audio id="myaudio" src="files/calmaudio.mp3"></audio>
+    </section>
 
-        <button id="muteunmutebtn">
-          <img
-            id="muteunmuteimg"
-            src="files/unmute.png"
-            alt="mute-unmute-btn"
-            width="24"
-            height="24"
-          />
-        </button>
+    <section class="audio-controls">
+      <button id="playpausebtn">
+        <img id="playpauseimg" src="files/play.png" alt="playpausebtn"
+        width="24" height="24"
+      </button>
+
+      <button id="muteunmutebtn">
+        <img id="muteunmuteimg" src="files/unmute.png" alt="muteunmutebtn"
+        width="24" height="24"
+      </button>
     </section>
   </body>
 </html>

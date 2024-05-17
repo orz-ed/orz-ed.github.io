@@ -1,3 +1,26 @@
+const myAudio = document.querySelector("#myaudio");
+console.log(myAudio);
+
+const playPauseBtn = document.querySelector("#playpausebtn");
+console.log(playPauseBtn);
+
+const playPauseImg = document.querySelector("#playpauseimg");
+console.log(playPauseImg);
+
+playPauseBtn.addEventListener("click", toggleAudioPlayback);
+
+function toggleAudioPlayback() {
+  if (myAudio.paused || myAudio.ended) {
+    playPauseImg.src = "files/pause.png";
+    myAudio.play();
+  } else {
+    playPauseImg.src = "files/play.png";
+    myAudio.pause();
+  }
+}
+
+// ---------------------------------------------------------------
+
 const muteUnmutebtn = document.querySelector("#muteunmutebtn");
 console.log(muteUnmutebtn);
 
@@ -7,13 +30,11 @@ console.log(muteUnmuteImg);
 muteUnmutebtn.addEventListener("click", toggleSound);
 
 function toggleSound() {
-  if (myVideo.muted) {
+  if (myAudio.muted) {
     muteUnmuteImg.src = "files/unmute.png";
-    muteUnmutebtn.style.backgroundColor = "blue";
-    myVideo.muted = false;
+    myAudio.muted = false;
   } else {
-    muteUnmuteImg.src = "files/muted.png";
-    muteUnmutebtn.style.backgroundColor = "red";
-    myVideo.muted = true;
+    muteUnmuteImg.src = "files/mute.png";
+    myAudio.muted = true;
   }
 }
