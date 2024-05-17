@@ -7,6 +7,8 @@ I went with three section structure
 2. audio-controls: it cocntains buttons to control the video
 3. timeline: it contains the buttons to navigate to different steps-->
 
+<!-- Icon images are from adobe stock -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,10 +18,29 @@ I went with three section structure
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+
+    <!-- Google fonts stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Passion+One:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <a href="credits.html">music credits</a>
+
+    <section class="audio-title">
+      <!-- in this section, we display the name of the audio and current playtime -->
+      <h1>Now Playing: <span id="audio-name"></span></h1>
+      <h1>Current playtime: <span id="audio-time"></span></h1>
+    </section>
+
     <section class="audio-contanier">
-      <audio id="myaudio" src="files/calmaudio.mp3"></audio>
+      <audio
+        id="myaudio"
+        src="lofi/Colorful Flowers by Tokyo Music Walker.mp3"
+      ></audio>
     </section>
 
     <section class="audio-controls">
