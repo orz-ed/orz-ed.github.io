@@ -30,29 +30,65 @@ I went with three section structure
   <body>
     <a href="credits.html">music credits</a>
 
-    <section class="audio-title">
-      <!-- in this section, we display the name of the audio and current playtime -->
-      <h1>Now Playing: <span id="audio-name"></span></h1>
-      <h1>Current playtime: <span id="audio-time"></span></h1>
-    </section>
+    <div class="outer">
+      <section class="audio-title">
+        <!-- in this section, we display the name of the audio and current playtime -->
+        <h1>Now Playing: <span id="audio-name"></span></h1>
+      </section>
 
-    <section class="audio-contanier">
-      <audio
-        id="myaudio"
-        src="lofi/Colorful Flowers by Tokyo Music Walker.mp3"
-      ></audio>
-    </section>
+      <section class="audio-contanier">
+        <audio
+          id="myaudio"
+          src="lofi/Colorful Flowers by Tokyo Music Walker.mp3"
+          controls
+        ></audio>
+      </section>
 
-    <section class="audio-controls">
-      <button id="playpausebtn">
-        <img id="playpauseimg" src="files/play.png" alt="playpausebtn"
-        width="24" height="24"
-      </button>
+      <section class="audio-controls">
+        <button id="playpausebtn">
+          <img id="playpauseimg" src="files/play.png" alt="playpausebtn"
+          width="24" height="24"
+        </button>
 
-      <button id="muteunmutebtn">
-        <img id="muteunmuteimg" src="files/unmute.png" alt="muteunmutebtn"
-        width="24" height="24"
-      </button>
-    </section>
+        <button id="loopbtn">
+          <img
+            id="loopimg"
+            src="https://img.icons8.com/ios-glyphs/30/repeat.png"
+            alt="loopbtn"
+            width="24"
+            height="24"
+          />
+        </button>
+
+        <div class="progbar">
+          <span id="progbarfill"></span>
+        </div>
+
+        <button id="muteunmutebtn">
+          <img id="muteunmuteimg" src="files/unmute.png" alt="muteunmutebtn"
+          width="24" height="24"
+        </button>
+
+        <button id="voldownbtn">
+          <img
+            id="voldownimg"
+            src="https://img.icons8.com/ios-glyphs/30/low-volume.png"
+            alt="voldownbtn"
+            width="24"
+            height="24"
+          />
+        </button>
+
+        <button id="volupbtn">
+          <img
+            id="volupimg"
+            src="https://img.icons8.com/ios-glyphs/30/high-volume--v1.png"
+            alt="volupbtn"
+            width="24"
+            height="24"
+          />
+        </button>
+      </section>
+    </div>
   </body>
 </html>
