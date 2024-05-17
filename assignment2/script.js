@@ -7,6 +7,8 @@ console.log(playPauseBtn);
 const playPauseImg = document.querySelector("#playpauseimg");
 console.log(playPauseImg);
 
+// myAudio.removeAttribute("controls");
+
 playPauseBtn.addEventListener("click", toggleAudioPlayback);
 
 function toggleAudioPlayback() {
@@ -19,6 +21,26 @@ function toggleAudioPlayback() {
   }
 }
 
+// ---------------------------------------------------------------
+
+const audioName = document.querySelector("#audioname");
+
+// We create an object array containing the videos
+const audioList = [
+  {
+    name: "Colourful Flowers",
+    link: "lofi/Colorful Flowers by Tokyo Music Walker.mp3",
+  },
+  { name: "Stardust", link: "stardust.mp4" },
+];
+
+//depending on the number, it will fetch the right video and its name from the VideoList array
+function playAudio(no) {
+  myAudio.src = audioList[no].link;
+  audioName.textContent = audioList[no].name;
+  // myVideo.load();
+  // myVideo.play();
+}
 // ---------------------------------------------------------------
 
 let loop = false;
