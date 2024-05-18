@@ -66,6 +66,11 @@ I went with three section structure
           />
         </button>
 
+        <button id="muteunmutebtn">
+          <img id="muteunmuteimg" src="files/mute.png" alt="muteunmutebtn"
+          width="24" height="24"
+        </button>
+
         <button id="prevbtn">
           <img id="previmg" src="files/prev.PNG" alt="prevbtn"
           width="24" height="24"
@@ -77,12 +82,7 @@ I went with three section structure
         </button>
 
         <button id="nextbtn">
-          <img id="muteunmuteimg" src="files/next.PNG" alt="nextbtn"
-          width="24" height="24"
-        </button>
-
-        <button id="muteunmutebtn">
-          <img id="muteunmuteimg" src="files/mute.png" alt="muteunmutebtn"
+          <img id="nextimg" src="files/next.PNG" alt="nextbtn"
           width="24" height="24"
         </button>
 
@@ -107,5 +107,13 @@ I went with three section structure
         </button>
       </section>
     </div>
+
+    <div id="stopwatch">00:00:00</div>
+    <section class="stopwatchbtn">
+    <button onclick="startStopwatch()">Start</button>
+    <button onclick="stopStopwatch()">Stop</button>
+    <button onclick="resetStopwatch()">Reset</button>
+  </section>
+
   </body>
 </html>
