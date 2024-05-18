@@ -7,7 +7,7 @@ console.log(playPauseBtn);
 const playPauseImg = document.querySelector("#playpauseimg");
 console.log(playPauseImg);
 
-// myAudio.removeAttribute("controls");
+myAudio.removeAttribute("controls");
 
 playPauseBtn.addEventListener("click", toggleAudioPlayback);
 
@@ -61,10 +61,10 @@ function replay() {
 function loopAudio() {
   if (loop) {
     loop = false;
-    loopBtn.style.backgroundColor = "#d5cea3";
+    loopBtn.style.backgroundColor = "#ffffff";
   } else {
     loop = true;
-    loopBtn.style.backgroundColor = "#7b775e";
+    loopBtn.style.backgroundColor = "#89898968";
   }
   console.log("loop is", loop);
 }
@@ -87,18 +87,15 @@ function updateProgressBar() {
 const muteUnmutebtn = document.querySelector("#muteunmutebtn");
 console.log(muteUnmutebtn);
 
-const muteUnmuteImg = document.querySelector("#muteunmuteimg");
-console.log(muteUnmuteImg);
-
 muteUnmutebtn.addEventListener("click", toggleSound);
 
 function toggleSound() {
   if (myAudio.muted) {
-    muteUnmuteImg.src = "files/unmute.png";
     myAudio.muted = false;
+    muteunmutebtn.style.backgroundColor = "#ffffff";
   } else {
-    muteUnmuteImg.src = "files/mute.png";
     myAudio.muted = true;
+    muteunmutebtn.style.backgroundColor = "#89898968";
   }
 }
 
@@ -127,6 +124,56 @@ function decreaseVolume() {
   if (myAudio.volume > 0.1) {
     myAudio.volume -= 0.1;
   }
+}
+
+// ---------------------------------------------------------------
+const title = document.getElementById("audio-name");
+
+const songs = [
+  "Colourful Flowers by Tokyo Music Walker",
+  "Purple Dream by Ghostrifter Official",
+  "Wild Strawberry by Purrple Cat",
+];
+
+let songIndex = 2;
+
+loadSong(songs[songIndex]);
+
+function loadSong(song) {
+  title.innerText = song;
+  audio.src = "lofi/${song}.mp3";
+}
+
+// ---------------------------------------------------------------
+
+const prevBtn = document.querySelector("#prevbtn");
+const nextBtn = document.querySelector("#nextbtn");
+
+prevBtn.addEventListener("click", prevSong);
+nextBtn.addEventListener("click", nextSong);
+
+function prevSong() {
+  songIndex--;
+
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
+function nextSong() {
+  songIndex++;
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
 }
 
 // ---------------------------------------------------------------

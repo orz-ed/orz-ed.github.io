@@ -30,10 +30,8 @@ I went with three section structure
   <body>
     <a href="credits.html">music credits</a>
 
-    <!-- <div class="outer">
-      <section class="audio-title">
-        <h1>Now Playing: <span id="audioname"></span></h1>
-      </section> -->
+    <div class="audio-info">
+      <h1>Now Playing: <span id="audio-name"></span></h1>
 
       <section class="audiolist">
         <audio
@@ -45,14 +43,19 @@ I went with three section structure
           id="myaudio"
           src="lofi/Purple Dream by Ghostrifter Official.mp3"
         ></audio>
+        <audio
+          id="myaudio"
+          src="lofi/Wild Strawberry by Purrple Cat.mp3"
+        ></audio>
+    </div>
+
+    <div class="audio-container">
+        <div class="progbar">
+          <span id="progbarfill"></span>
+        </div>
       </section>
 
       <section class="audio-controls">
-        <button id="playpausebtn">
-          <img id="playpauseimg" src="files/play.png" alt="playpausebtn"
-          width="24" height="24"
-        </button>
-
         <button id="loopbtn">
           <img
             id="loopimg"
@@ -63,12 +66,23 @@ I went with three section structure
           />
         </button>
 
-        <div class="progbar">
-          <span id="progbarfill"></span>
-        </div>
+        <button id="prevbtn">
+          <img id="previmg" src="files/prev.PNG" alt="prevbtn"
+          width="24" height="24"
+        </button>
+
+        <button id="playpausebtn">
+          <img id="playpauseimg" src="files/play.png" alt="playpausebtn"
+          width="40" height="40"
+        </button>
+
+        <button id="nextbtn">
+          <img id="muteunmuteimg" src="files/next.PNG" alt="nextbtn"
+          width="24" height="24"
+        </button>
 
         <button id="muteunmutebtn">
-          <img id="muteunmuteimg" src="files/unmute.png" alt="muteunmutebtn"
+          <img id="muteunmuteimg" src="files/mute.png" alt="muteunmutebtn"
           width="24" height="24"
         </button>
 

@@ -29,9 +29,10 @@ I went with three section structure
   </head>
   <body>
     <h1>music player</h1>
+    <br />
     <div class="audio-container">
       <div class="audio-info">
-        <h4 id="title">Colourful flowers</h4>
+        <h4 id="title">Now playing: Colourful flowers by Tokyo Music Walker</h4>
         <div class="progress-container">
           <div class="progress"></div>
         </div>
@@ -41,24 +42,36 @@ I went with three section structure
         src="lofi/Colorful Flowers by Tokyo Music Walker.mp3"
         id="audio"
       ></audio>
-    </div>
 
-    <div class="navigation">
-      <button id="prev" class="action-btn">
-        <i class="fas fa-backward"></i>
-      </button>
-      <button id="play" class="action-btn action-btn-big">
-        <img
-          id="playpauseimg"
-          src="files/play.PNG"
-          alt="play button"
-          width="24"
-          height="24"
-        />
-      </button>
-      <button id="next" class="action-btn">
-        <i class="fas fa-forward"></i>
-      </button>
+      <div class="navigation">
+        <button id="prev" class="action-btn">
+          <img
+            id="previmg"
+            src="files/last.PNG"
+            alt="prev button"
+            width="24"
+            height="24"
+          />
+        </button>
+        <button id="playpausebtn" class="action-btn">
+          <img
+            id="playpauseimg"
+            src="files/play.png"
+            alt="play button"
+            width="34"
+            height="34"
+          />
+        </button>
+        <button id="next" class="action-btn">
+          <img
+            id="nextimg"
+            src="files/next.PNG"
+            alt="next button"
+            width="24"
+            height="24"
+          />
+        </button>
+      </div>
     </div>
   </body>
 </html>
