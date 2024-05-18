@@ -23,24 +23,43 @@ function toggleAudioPlayback() {
 
 // ---------------------------------------------------------------
 
-const audioName = document.querySelector("#audioname");
+// const audioName = document.querySelector("#audioname");
 
-// We create an object array containing the videos
-const audioList = [
-  {
-    name: "Colourful Flowers",
-    link: "lofi/Colorful Flowers by Tokyo Music Walker.mp3",
-  },
-  { name: "Stardust", link: "stardust.mp4" },
-];
+// // We create an object array containing the videos
+// const audioList = [
+//   {
+//     name: "Colourful Flowers",
+//     link: "lofi/Colorful Flowers by Tokyo Music Walker.mp3",
+//   },
+//   { name: "Stardust", link: "stardust.mp4" },
+// ];
 
-//depending on the number, it will fetch the right video and its name from the VideoList array
-function playAudio(no) {
-  myAudio.src = audioList[no].link;
-  audioName.textContent = audioList[no].name;
-  // myVideo.load();
-  // myVideo.play();
-}
+// //depending on the number, it will fetch the right video and its name from the VideoList array
+// function playAudio(no) {
+//   myAudio.src = audioList[no].link;
+//   audioName.textContent = audioList[no].name;
+//   // myVideo.load();
+//   // myVideo.play();
+// }
+
+// ---------------------------------------------------------------
+
+// let prevbtn = document.querySelector(".prevbtn");
+// let nextbtn = document.querySelector(".nextbtn");
+
+// let playlist = [
+//   "Colorful Flowers by Tokyo Music Walker.mp3",
+//   "Purple Dream by Ghostrifter Official.mp3",
+//   "Wild Strawberry by Purrple Cat.mp3",
+// ];
+
+// let treck; // Variable with track index
+
+// // Event before page loading
+// window.onload = function () {
+//   treck = 0; // Assign zero to the variable
+// };
+
 // ---------------------------------------------------------------
 
 let loop = false;
@@ -177,9 +196,10 @@ function decreaseVolume() {
 // }
 
 // ---------------------------------------------------------------
-var startTime; // to keep track of the start time
-var stopwatchInterval; // to keep track of the interval
-var elapsedPausedTime = 0; // to keep track of the elapsed time while stopped
+// This is to create a stopwatch that users can use to time how long they've been studying/relaxing for
+var startTime;
+var stopwatchInterval;
+var elapsedPausedTime = 0;
 
 function startStopwatch() {
   if (!stopwatchInterval) {
@@ -214,3 +234,90 @@ function pad(number) {
   // add a leading zero if the number is less than 10
   return (number < 10 ? "0" : "") + number;
 }
+
+// ---------------------------------------------------------------
+
+// let trackList = [
+//   {
+//     name: "Colourful Flowers",
+//     path: "./lofi/Purple Dream by Ghostrifter Official.mp3",
+//     singer: "Tokyo Music Walker",
+//   },
+//   {
+//     name: "Purple Dream",
+//     path: "./lofi/Purple Dream by Ghostrifter Official.mp3",
+//     singer: "Ghostrifter Official",
+//   },
+//   {
+//     name: "Wild Strawberry",
+//     path: "./lofi/Wild Strawberry by Purrple Cat.mp3",
+//     singer: "Purrple Cat",
+//   },
+// ];
+
+// const playpausebtn = document.querySelector("playpausebtn"),
+//   playPauseImg = document.querySelector("#playpauseimg"),
+//   previous = document.querySelector("prevbtn"),
+//   next = document.querySelector("nextbtn");
+
+// let timer;
+// let autoplay = 0;
+// let indexTrack = 0;
+// let songIsPlaying = false;
+// let track = document.createElement("audio");
+
+// playpausebtn.addEventListener("click", justPlay);
+// next.addEventListener("click", nextSong);
+// previous.addEventListener("click", prevSong);
+
+// // Load Tracks
+// function loadTrack(indexTrack) {
+//   clearInterval(timer);
+//   resetSlider();
+
+//   track.src = trackList[indexTrack].path;
+//   title.innerHTML = trackList[indexTrack].name;
+//   artist.innerHTML = trackList[indexTrack].singer;
+//   track.load();
+// }
+// loadTrack(indexTrack);
+
+// // Play Song
+// function playSong() {
+//   track.play();
+//   songIsPlaying = true;
+//   // play.innerHTML = '<i class="fas fa-pause"></i>';
+// }
+
+// // Pause Song
+// function pauseSong() {
+//   track.pause();
+//   songIsPlaying = false;
+//   // play.innerHTML = '<i class="fas fa-play"></i>';
+// }
+
+// // Next song
+// function nextSong() {
+//   if (indexTrack < trackList.length - 1) {
+//     indexTrack++;
+//     loadTrack(indexTrack);
+//     playSong();
+//   } else {
+//     indexTrack = 0;
+//     loadTrack(indexTrack);
+//     playSong();
+//   }
+// }
+
+// // prev song
+// function prevSong() {
+//   if (indexTrack > 0) {
+//     indexTrack--;
+//     loadTrack(indexTrack);
+//     playSong();
+//   } else {
+//     indexTrack = trackList.length - 1;
+//     loadTrack(indexTrack);
+//     playSong();
+//   }
+// }
