@@ -84,7 +84,6 @@ function nextTrack() {
   playAudioAtIndex(currentIndex);
 }
 
-// Function to play video at a specific index
 function playAudioAtIndex(index) {
   myAudio.pause(); // Pause the video before changing source
   console.log(audioList[index].link);
@@ -92,6 +91,9 @@ function playAudioAtIndex(index) {
   myAudio.load(); // Load the new source
   myAudio.play(); // Play the audio
 }
+
+//to autoplay the next song in the list
+myAudio.addEventListener("ended", nextTrack);
 
 // ---------------------------------------------------------------
 
