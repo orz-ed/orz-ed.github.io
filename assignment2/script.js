@@ -44,7 +44,7 @@ console.log(playPauseBtn);
 const playPauseImg = document.querySelector("#playpauseimg");
 console.log(playPauseImg);
 
-myAudio.removeAttribute("controls");
+// myAudio.removeAttribute("controls");
 
 playPauseBtn.addEventListener("click", toggleAudioPlayback);
 
@@ -217,6 +217,14 @@ function pad(number) {
   // add a leading zero if the number is less than 10
   return (number < 10 ? "0" : "") + number;
 }
+
+// ---------------------------------------------------------------
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth >= "800") {
+    window.location.href = "index2.html";
+  }
+});
 
 // ---------------------------------------------------------------
 
@@ -433,7 +441,9 @@ function pad(number) {
 
 // ---------------------------------------------------------------
 
-function redirect() {
-  if (screen.width <= 950) {
-     window.location.replace = ("https://orz-ed.github.io/assignment2/index2");
-  }
+// if (screen.width <= 950) {
+//   window.location = "https://orz-ed.github.io/assignment2.html";
+// }
+// if (screen.width <= 950) {
+//   window.location.replace("https://orz-ed.github.io/assignment2/index2.html");
+// }
