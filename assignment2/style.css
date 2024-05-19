@@ -101,6 +101,7 @@ body {
 
 .footer {
   padding: 20px;
+  justify-content: center;
   text-align: center;
   color: #4c3939;
   background: rgb(243, 234, 238);
