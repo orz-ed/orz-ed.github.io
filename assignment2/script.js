@@ -1,28 +1,3 @@
-const myAudio = document.querySelector("#myaudio");
-console.log(myAudio);
-
-const playPauseBtn = document.querySelector("#playpausebtn");
-console.log(playPauseBtn);
-
-const playPauseImg = document.querySelector("#playpauseimg");
-console.log(playPauseImg);
-
-myAudio.removeAttribute("controls");
-
-playPauseBtn.addEventListener("click", toggleAudioPlayback);
-
-function toggleAudioPlayback() {
-  if (myAudio.paused || myAudio.ended) {
-    playPauseImg.src = "files/pause.png";
-    myAudio.play();
-  } else {
-    playPauseImg.src = "files/play.png";
-    myAudio.pause();
-  }
-}
-
-// ---------------------------------------------------------------
-
 const audioList = [
   {
     name: "Colorful Flowers by Tokyo Music Walker",
@@ -49,6 +24,41 @@ const audioList = [
     link: "lofi/Torn.mp3",
   },
 ];
+
+const audioName = document.querySelector("#audio-name");
+
+function playAudio(no) {
+  myAudio.pause();
+  myAudio.src = audioList[no].link;
+  audioName.textContent = audioList[no].name;
+  myAudio.load();
+  myAudio.play();
+}
+
+const myAudio = document.querySelector("#myaudio");
+console.log(myAudio);
+
+const playPauseBtn = document.querySelector("#playpausebtn");
+console.log(playPauseBtn);
+
+const playPauseImg = document.querySelector("#playpauseimg");
+console.log(playPauseImg);
+
+myAudio.removeAttribute("controls");
+
+playPauseBtn.addEventListener("click", toggleAudioPlayback);
+
+function toggleAudioPlayback() {
+  if (myAudio.paused || myAudio.ended) {
+    playPauseImg.src = "files/pause.png";
+    myAudio.play();
+  } else {
+    playPauseImg.src = "files/play.png";
+    myAudio.pause();
+  }
+}
+
+// ---------------------------------------------------------------
 
 const prevButton = document.querySelector("#prevbtn");
 console.log(prevButton);
@@ -81,15 +91,6 @@ function playAudioAtIndex(index) {
   myAudio.src = audioList[index].link;
   myAudio.load(); // Load the new source
   myAudio.play(); // Play the audio
-}
-
-function playSong(no) {
-  songAudio.pause();
-  songAudio.src = audioList[no].link;
-  songName.textContent = songList[no].name;
-  songCover.src = songList[no].img;
-  songAudio.load();
-  songAudio.play();
 }
 
 // ---------------------------------------------------------------
