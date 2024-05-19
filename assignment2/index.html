@@ -28,10 +28,12 @@ I went with three section structure
     />
   </head>
   <body>
-    <a href="credits.html">music credits</a>
+
+    <h1>TIME TO FOCUS!</h1>
+
+    <image src="files/tent.gif" id="tent"></image> 
 
     <div class="audio-info">
-      <h1>Now Playing: <span id="audio-name"></span></h1>
 
       <section class="audiolist">
         <audio
@@ -50,6 +52,9 @@ I went with three section structure
     </div>
 
     <div class="audio-container">
+
+      <h2>Now Playing: <span id="audio-name"></span></h2>
+
         <div class="progbar">
           <span id="progbarfill"></span>
         </div>
@@ -108,12 +113,22 @@ I went with three section structure
       </section>
     </div>
 
-    <div id="stopwatch">00:00:00</div>
-    <section class="stopwatchbtn">
-    <button onclick="startStopwatch()">Start</button>
-    <button onclick="stopStopwatch()">Stop</button>
-    <button onclick="resetStopwatch()">Reset</button>
-  </section>
+    <section class="stopwatch-container">
+      <h3>Study Timer</h3>
+      <div id="stopwatch">00:00:00</div>
+      <section class="stopwatchbtn">
+      <button onclick="startStopwatch()">Start</button>
+      <button onclick="stopStopwatch()">Stop</button>
+      <button onclick="resetStopwatch()">Reset</button>
+      </section>  
+    </section> 
 
+  <a href="credits.html">music credits</a>
+
+  <footer class="footer">
+    <h3>Eden Wu</h3>
+    <p>s4003321 Interactive Media Assignment 2</p>
+    <p>Thank you Rohit :D</p>
+  </footer>
   </body>
 </html>
