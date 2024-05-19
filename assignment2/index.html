@@ -35,26 +35,20 @@ I went with three section structure
 
     <div class="audio-info">
 
-      <section class="audiolist">
-        <audio
+      <section id="audioPlayer">
+        <audio 
           id="myaudio"
-          src="lofi/Colorful Flowers by Tokyo Music Walker.mp3"
+          src="lofi/ColorfulFlowers.mp3"
+          type="audio/mp3"
           controls
         ></audio>
-        <audio
-          id="myaudio"
-          src="lofi/Purple Dream by Ghostrifter Official.mp3"
-        ></audio>
-        <audio
-          id="myaudio"
-          src="lofi/Wild Strawberry by Purrple Cat.mp3"
-        ></audio>
+
     </div>
 
     <div class="audio-container">
-
-      <h2>Now Playing: <span id="audio-name"></span></h2>
-
+      <div class="song-title">
+      <h2>Now Playing: <span id="audio-name">Colorful Flowers by Tokyo Music Walker</span></h2>
+      </div>
         <div class="progbar">
           <span id="progbarfill"></span>
         </div>

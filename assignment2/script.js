@@ -23,42 +23,74 @@ function toggleAudioPlayback() {
 
 // ---------------------------------------------------------------
 
-// const audioName = document.querySelector("#audioname");
+const audioList = [
+  {
+    name: "Colorful Flowers by Tokyo Music Walker",
+    link: "lofi/ColorfulFlowers.mp3",
+  },
+  {
+    name: "Purple Dream by Ghostrifter Official",
+    link: "lofi/PurpleDream.mp3",
+  },
+  {
+    name: "Wild Strawberry by Purrple Cat",
+    link: "lofi/WildStrawb.mp3",
+  },
+  {
+    name: "Fragile by Keys of Moon",
+    link: "lofi/Fragile.mp3",
+  },
+  {
+    name: "Green Tea by Purrple Cat",
+    link: "lofi/GreenTea.mp3",
+  },
+  {
+    name: "Torn by Purrple Cat",
+    link: "lofi/Torn.mp3",
+  },
+];
 
-// // We create an object array containing the videos
-// const audioList = [
-//   {
-//     name: "Colourful Flowers",
-//     link: "lofi/Colorful Flowers by Tokyo Music Walker.mp3",
-//   },
-//   { name: "Stardust", link: "stardust.mp4" },
-// ];
+const prevButton = document.querySelector("#prevbtn");
+console.log(prevButton);
+prevButton.addEventListener("click", prevTrack);
 
-// //depending on the number, it will fetch the right video and its name from the VideoList array
-// function playAudio(no) {
-//   myAudio.src = audioList[no].link;
-//   audioName.textContent = audioList[no].name;
-//   // myVideo.load();
-//   // myVideo.play();
-// }
+const nextButton = document.querySelector("#nextbtn");
+console.log(nextButton);
+nextButton.addEventListener("click", nextTrack);
 
-// ---------------------------------------------------------------
+let currentIndex = 0;
 
-// let prevbtn = document.querySelector(".prevbtn");
-// let nextbtn = document.querySelector(".nextbtn");
+function prevTrack() {
+  console.log("previous track loading");
+  currentIndex = (currentIndex - 1 + audioList.length) % audioList.length;
+  console.log(currentIndex);
+  playAudioAtIndex(currentIndex);
+}
 
-// let playlist = [
-//   "Colorful Flowers by Tokyo Music Walker.mp3",
-//   "Purple Dream by Ghostrifter Official.mp3",
-//   "Wild Strawberry by Purrple Cat.mp3",
-// ];
+function nextTrack() {
+  console.log("next track loading");
+  currentIndex = (currentIndex + 1) % audioList.length;
+  console.log(currentIndex);
+  playAudioAtIndex(currentIndex);
+}
 
-// let treck; // Variable with track index
+// Function to play video at a specific index
+function playAudioAtIndex(index) {
+  myAudio.pause(); // Pause the video before changing source
+  console.log(audioList[index].link);
+  myAudio.src = audioList[index].link;
+  myAudio.load(); // Load the new source
+  myAudio.play(); // Play the audio
+}
 
-// // Event before page loading
-// window.onload = function () {
-//   treck = 0; // Assign zero to the variable
-// };
+function playSong(no) {
+  songAudio.pause();
+  songAudio.src = audioList[no].link;
+  songName.textContent = songList[no].name;
+  songCover.src = songList[no].img;
+  songAudio.load();
+  songAudio.play();
+}
 
 // ---------------------------------------------------------------
 
@@ -146,56 +178,6 @@ function decreaseVolume() {
 }
 
 // ---------------------------------------------------------------
-// const title = document.getElementById("audio-name");
-
-// const songs = [
-//   "Colourful Flowers by Tokyo Music Walker",
-//   "Purple Dream by Ghostrifter Official",
-//   "Wild Strawberry by Purrple Cat",
-// ];
-
-// let songIndex = 2;
-
-// loadSong(songs[songIndex]);
-
-// function loadSong(song) {
-//   title.innerText = song;
-//   audio.src = "lofi/${song}.mp3";
-// }
-
-// ---------------------------------------------------------------
-
-// const prevBtn = document.querySelector("#prevbtn");
-// const nextBtn = document.querySelector("#nextbtn");
-
-// prevBtn.addEventListener("click", prevSong);
-// nextBtn.addEventListener("click", nextSong);
-
-// function prevSong() {
-//   songIndex--;
-
-//   if (songIndex < 0) {
-//     songIndex = songs.length - 1;
-//   }
-
-//   loadSong(songs[songIndex]);
-
-//   playSong();
-// }
-
-// function nextSong() {
-//   songIndex++;
-
-//   if (songIndex > songs.length - 1) {
-//     songIndex = 0;
-//   }
-
-//   loadSong(songs[songIndex]);
-
-//   playSong();
-// }
-
-// ---------------------------------------------------------------
 // This is to create a stopwatch that users can use to time how long they've been studying/relaxing for
 var startTime;
 var stopwatchInterval;
@@ -234,6 +216,41 @@ function pad(number) {
   // add a leading zero if the number is less than 10
   return (number < 10 ? "0" : "") + number;
 }
+
+// ---------------------------------------------------------------
+
+const audioPlayer = document.querySelector("#myaudio");
+
+// the following code will play the audio when user resizes the window to 400px
+
+function checkWindowWidth() {
+  // Get current window width
+
+  const windowWidth = window.innerWidth;
+
+  console.log(windowWidth);
+
+  // Define minimum window width threshold
+
+  const minWidthThreshold = 800;
+  // Adjust as needed
+
+  // If window width is at or below the minimum threshold, start playing audio
+
+  if (windowWidth <= minWidthThreshold) {
+    audioPlayer.play();
+  } else {
+    audioPlayer.pause();
+  }
+}
+
+// Add event listener for window resize
+
+window.addEventListener("resize", checkWindowWidth);
+
+// Check window width initially
+
+checkWindowWidth();
 
 // ---------------------------------------------------------------
 
@@ -321,52 +338,105 @@ function pad(number) {
 //     playSong();
 //   }
 // }
+
 // ---------------------------------------------------------------
 
-const audioList = [
-  {
-    name: "Colourful Flowers",
-    link: "lofi/Colorful Flowers by Tokyo Music Walker.mp3",
-  },
-  {
-    name: "Purple Dream",
-    link: "lofi/Purple Dream by Ghostrifter Official.mp3",
-  },
-  {
-    name: "Wild Strawberry",
-    link: "lofi/Wild Strawberry by Purrple Cat.mp3",
-  },
-];
+// function updateMetadata() {
+//   let track = audioList[index];
 
-const prevButton = document.querySelector("#prevbtn");
-console.log(prevButton);
-prevButton.addEventListener("click", prevTrack);
+//   console.log('Playing ' + track.title + ' track...');
+//   navigator.mediaSession.metadata = new MediaMetadata({
+//     title: track.title,
+//     artist: track.artist,
+//     album: track.album,
+//     artwork: track.artwork,
+//   });
 
-const nextButton = document.querySelector("#nextbtn");
-console.log(nextButton);
-nextButton.addEventListener("click", nextTrack);
+// ---------------------------------------------------------------
 
-let currentIndex = 0;
+// const audioName = document.querySelector("#audioname");
 
-function prevTrack() {
-  console.log("previous track loading");
-  currentIndex = (currentIndex - 1 + audioList.length) % audioList.length;
-  console.log(currentIndex);
-  playVideoAtIndex(currentIndex);
-}
+// // We create an object array containing the videos
+// const audioList = [
+//   {
+//     name: "Colourful Flowers",
+//     link: "lofi/Colorful Flowers by Tokyo Music Walker.mp3",
+//   },
+//   { name: "Stardust", link: "stardust.mp4" },
+// ];
 
-function nextTrack() {
-  console.log("next track loading");
-  currentIndex = (currentIndex + 1) % audioList.length;
-  console.log(currentIndex);
-  playAudioAtIndex(currentIndex);
-}
+// //depending on the number, it will fetch the right video and its name from the VideoList array
+// function playAudio(no) {
+//   myAudio.src = audioList[no].link;
+//   audioName.textContent = audioList[no].name;
+//   // myVideo.load();
+//   // myVideo.play();
+// }
 
-// Function to play video at a specific index
-function playAudioAtIndex(index) {
-  myAudio.pause(); // Pause the video before changing source
-  console.log(audioList[index].link);
-  myAudio.src = audioList[index].link;
-  myAudio.load(); // Load the new source
-  myAudio.play(); // Play the audio
-}
+// ---------------------------------------------------------------
+
+// let prevbtn = document.querySelector(".prevbtn");
+// let nextbtn = document.querySelector(".nextbtn");
+
+// let playlist = [
+//   "Colorful Flowers by Tokyo Music Walker.mp3",
+//   "Purple Dream by Ghostrifter Official.mp3",
+//   "Wild Strawberry by Purrple Cat.mp3",
+// ];
+
+// let treck; // Variable with track index
+
+// // Event before page loading
+// window.onload = function () {
+//   treck = 0; // Assign zero to the variable
+// };
+// const title = document.getElementById("audio-name");
+
+// const songs = [
+//   "Colourful Flowers by Tokyo Music Walker",
+//   "Purple Dream by Ghostrifter Official",
+//   "Wild Strawberry by Purrple Cat",
+// ];
+
+// let songIndex = 2;
+
+// loadSong(songs[songIndex]);
+
+// function loadSong(song) {
+//   title.innerText = song;
+//   audio.src = "lofi/${song}.mp3";
+// }
+
+// ---------------------------------------------------------------
+
+// const prevBtn = document.querySelector("#prevbtn");
+// const nextBtn = document.querySelector("#nextbtn");
+
+// prevBtn.addEventListener("click", prevSong);
+// nextBtn.addEventListener("click", nextSong);
+
+// function prevSong() {
+//   songIndex--;
+
+//   if (songIndex < 0) {
+//     songIndex = songs.length - 1;
+//   }
+
+//   loadSong(songs[songIndex]);
+
+//   playSong();
+// }
+
+// function nextSong() {
+//   songIndex++;
+
+//   if (songIndex > songs.length - 1) {
+//     songIndex = 0;
+//   }
+
+//   loadSong(songs[songIndex]);
+
+//   playSong();
+// }
+
+// ---------------------------------------------------------------
