@@ -321,3 +321,52 @@ function pad(number) {
 //     playSong();
 //   }
 // }
+// ---------------------------------------------------------------
+
+const audioList = [
+  {
+    name: "Colourful Flowers",
+    link: "lofi/Colorful Flowers by Tokyo Music Walker.mp3",
+  },
+  {
+    name: "Purple Dream",
+    link: "lofi/Purple Dream by Ghostrifter Official.mp3",
+  },
+  {
+    name: "Wild Strawberry",
+    link: "lofi/Wild Strawberry by Purrple Cat.mp3",
+  },
+];
+
+const prevButton = document.querySelector("#prevbtn");
+console.log(prevButton);
+prevButton.addEventListener("click", prevTrack);
+
+const nextButton = document.querySelector("#nextbtn");
+console.log(nextButton);
+nextButton.addEventListener("click", nextTrack);
+
+let currentIndex = 0;
+
+function prevTrack() {
+  console.log("previous track loading");
+  currentIndex = (currentIndex - 1 + audioList.length) % audioList.length;
+  console.log(currentIndex);
+  playVideoAtIndex(currentIndex);
+}
+
+function nextTrack() {
+  console.log("next track loading");
+  currentIndex = (currentIndex + 1) % audioList.length;
+  console.log(currentIndex);
+  playAudioAtIndex(currentIndex);
+}
+
+// Function to play video at a specific index
+function playAudioAtIndex(index) {
+  myAudio.pause(); // Pause the video before changing source
+  console.log(audioList[index].link);
+  myAudio.src = audioList[index].link;
+  myAudio.load(); // Load the new source
+  myAudio.play(); // Play the audio
+}
