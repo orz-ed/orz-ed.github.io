@@ -144,10 +144,10 @@ muteUnmutebtn.addEventListener("click", toggleSound);
 function toggleSound() {
   if (myAudio.muted) {
     myAudio.muted = false;
-    muteunmutebtn.style.backgroundColor = "#ffffff";
+    muteUnmutebtn.style.backgroundColor = "#ffffff";
   } else {
     myAudio.muted = true;
-    muteunmutebtn.style.backgroundColor = "#89898968";
+    muteUnmutebtn.style.backgroundColor = "#89898968";
   }
 }
 
@@ -220,38 +220,29 @@ function pad(number) {
 
 // ---------------------------------------------------------------
 
-const audioPlayer = document.querySelector("#myaudio");
+// const audioPlayer = document.querySelector("#myaudio");
 
-// the following code will play the audio when user resizes the window to 400px
+// // the following code will play the audio when user resizes the window to 400px
 
-function checkWindowWidth() {
-  // Get current window width
+// function checkWindowWidth() {
+//   const windowWidth = window.innerWidth;
 
-  const windowWidth = window.innerWidth;
+//   console.log(windowWidth);
 
-  console.log(windowWidth);
+//   const minWidthThreshold = 800;
 
-  // Define minimum window width threshold
+//   // If window width is at or below the minimum threshold, start playing audio
 
-  const minWidthThreshold = 800;
-  // Adjust as needed
+//   if (windowWidth <= minWidthThreshold) {
+//     audioPlayer.play();
+//   } else {
+//     audioPlayer.pause();
+//   }
+// }
 
-  // If window width is at or below the minimum threshold, start playing audio
+// window.addEventListener("resize", checkWindowWidth);
 
-  if (windowWidth <= minWidthThreshold) {
-    audioPlayer.play();
-  } else {
-    audioPlayer.pause();
-  }
-}
-
-// Add event listener for window resize
-
-window.addEventListener("resize", checkWindowWidth);
-
-// Check window width initially
-
-checkWindowWidth();
+// checkWindowWidth();
 
 // ---------------------------------------------------------------
 
@@ -441,3 +432,8 @@ checkWindowWidth();
 // }
 
 // ---------------------------------------------------------------
+
+function redirect() {
+  if (screen.width <= 950) {
+     window.location.replace = ("https://orz-ed.github.io/assignment2/index2");
+  }
