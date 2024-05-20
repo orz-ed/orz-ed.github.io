@@ -85,6 +85,7 @@ function nextTrack() {
 
 function playAudioAtIndex(index) {
   myAudio.pause();
+  console.log(audioList[index].link);
   myAudio.src = audioList[index].link;
   audioName.textContent = audioList[index].name;
   myAudio.load();
@@ -101,6 +102,9 @@ let loop = false;
 const loopBtn = document.querySelector("#loopbtn");
 loopBtn.addEventListener("click", loopAudio);
 
+const loopImg = document.querySelector("#loopimg");
+console.log(loopImg);
+
 myAudio.addEventListener("ended", replay);
 
 function replay() {
@@ -114,10 +118,10 @@ function replay() {
 function loopAudio() {
   if (loop) {
     loop = false;
-    loopBtn.style.backgroundColor = "#ffffff";
+    loopImg.src = "files/loop.png";
   } else {
     loop = true;
-    loopBtn.style.backgroundColor = "#89898968";
+    loopImg.src = "files/loopon.png";
   }
   console.log("loop is", loop);
 }
@@ -140,15 +144,18 @@ function updateProgressBar() {
 const muteUnmutebtn = document.querySelector("#muteunmutebtn");
 console.log(muteUnmutebtn);
 
+const muteUnmuteimg = document.querySelector("#muteunmuteimg");
+console.log(muteUnmuteimg);
+
 muteUnmutebtn.addEventListener("click", toggleSound);
 
 function toggleSound() {
   if (myAudio.muted) {
     myAudio.muted = false;
-    muteUnmutebtn.style.backgroundColor = "#ffffff";
+    muteUnmuteimg.src = "files/mute.png";
   } else {
     myAudio.muted = true;
-    muteUnmutebtn.style.backgroundColor = "#89898968";
+    muteUnmuteimg.src = "files/muteon.png";
   }
 }
 
