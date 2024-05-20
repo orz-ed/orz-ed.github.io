@@ -43,7 +43,7 @@ console.log(playPauseBtn);
 const playPauseImg = document.querySelector("#playpauseimg");
 console.log(playPauseImg);
 
-// myAudio.removeAttribute("controls");
+myAudio.removeAttribute("controls");
 
 playPauseBtn.addEventListener("click", toggleAudioPlayback);
 
