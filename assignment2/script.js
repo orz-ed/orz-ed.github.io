@@ -25,7 +25,9 @@ const audioList = [
   },
 ];
 
-const audioName = document.querySelector("#audio-name");
+const myAudio = document.querySelector("#myaudio");
+console.log(myAudio);
+const audioName = document.querySelector("audio-name");
 
 function playAudio(no) {
   myAudio.pause();
@@ -34,9 +36,6 @@ function playAudio(no) {
   myAudio.load();
   myAudio.play();
 }
-
-const myAudio = document.querySelector("#myaudio");
-console.log(myAudio);
 
 const playPauseBtn = document.querySelector("#playpausebtn");
 console.log(playPauseBtn);
