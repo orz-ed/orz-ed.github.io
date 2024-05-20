@@ -27,15 +27,15 @@ const audioList = [
 
 const myAudio = document.querySelector("#myaudio");
 console.log(myAudio);
-const audioName = document.querySelector("audio-name");
+const audioName = document.querySelector("#audio-name");
 
-function playAudio(no) {
-  myAudio.pause();
-  myAudio.src = audioList[no].link;
-  audioName.textContent = audioList[no].name;
-  myAudio.load();
-  myAudio.play();
-}
+// function playAudio(no) {
+//   myAudio.pause();
+//   myAudio.src = audioList[no].link;
+//   audioName.textContent = audioList[no].name;
+//   myAudio.load();
+//   myAudio.play();
+// }
 
 const playPauseBtn = document.querySelector("#playpausebtn");
 console.log(playPauseBtn);
@@ -84,11 +84,11 @@ function nextTrack() {
 }
 
 function playAudioAtIndex(index) {
-  myAudio.pause(); // Pause the video before changing source
-  console.log(audioList[index].link);
+  myAudio.pause();
   myAudio.src = audioList[index].link;
-  myAudio.load(); // Load the new source
-  myAudio.play(); // Play the audio
+  audioName.textContent = audioList[index].name;
+  myAudio.load();
+  myAudio.play();
 }
 
 //to autoplay the next song in the list
@@ -180,7 +180,10 @@ function decreaseVolume() {
 }
 
 // ---------------------------------------------------------------
-// This is to create a stopwatch that users can use to time how long they've been studying/relaxing for
+// This is to create a stopwatch that users can use to time how long they've been studying for,
+// I followed this tutorial: https://www.educative.io/answers/how-to-create-a-stopwatch-in-javascript to
+// create this timer
+
 var startTime;
 var stopwatchInterval;
 var elapsedPausedTime = 0;
@@ -229,29 +232,7 @@ window.addEventListener("resize", function () {
 
 // ---------------------------------------------------------------
 
-// const audioPlayer = document.querySelector("#myaudio");
-
-// // the following code will play the audio when user resizes the window to 400px
-
-// function checkWindowWidth() {
-//   const windowWidth = window.innerWidth;
-
-//   console.log(windowWidth);
-
-//   const minWidthThreshold = 800;
-
-//   // If window width is at or below the minimum threshold, start playing audio
-
-//   if (windowWidth <= minWidthThreshold) {
-//     audioPlayer.play();
-//   } else {
-//     audioPlayer.pause();
-//   }
-// }
-
-// window.addEventListener("resize", checkWindowWidth);
-
-// checkWindowWidth();
+//EVERYTHING DOWN HERE ARE SCRIPTS FROM MANY DIFFERENT TUTORIALS I TRIED BUT DIDN'T END UP WORKING OUT
 
 // ---------------------------------------------------------------
 
