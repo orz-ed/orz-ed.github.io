@@ -224,7 +224,7 @@ function pad(number) {
 
 window.addEventListener("resize", function () {
   if (window.innerWidth >= "800") {
-    window.location.href = "resize.html";
+    window.location.href = "index.html";
   }
 });
 

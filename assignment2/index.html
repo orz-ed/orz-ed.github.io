@@ -1,14 +1,3 @@
-<!-- I chose a context of "Music for relaxation/study". 
-here are my rationale behind the semantics 
-
-I wanted the audio to be the main point of focus
-I went with three section structure
-1. video-contanier: it contains the main video and associated links
-2. audio-controls: it cocntains buttons to control the video
-3. timeline: it contains the buttons to navigate to different steps-->
-
-<!-- Icon images are from adobe stock -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +6,6 @@ I went with three section structure
     <title>EDEN'S ASSIGNMENT 2</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
 
     <!-- Google fonts stylesheets -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,101 +16,37 @@ I went with three section structure
     />
   </head>
   <body>
+    <h1>
+      resize your browser to minimise distraction and let's begin studying!
+    </h1>
+    <script>
+      window.addEventListener("resize", function () {
+        if (window.innerWidth <= "800") {
+          window.location.href = "player.html";
+        }
+      });
 
-    <h1>TIME TO FOCUS!</h1>
+      //   // the following code will play the audio when user resizes the window to 400px
+      //   function checkWindowWidth() {
+      //     // Get current window width
+      //     const windowWidth = window.innerWidth;
+      //     console.log(windowWidth);
+      //     // Define minimum window width threshold
+      //     const minWidthThreshold = 800; // Adjust as needed
 
-    <image src="files/tent.gif" id="tent"></image> 
+      //     // If window width is at or below the minimum threshold, start playing audio
+      //     if (windowWidth <= minWidthThreshold) {
+      //       window.location.href = "index.html";
+      //     } else {
+      //       window.location.href = "resize.html";
+      //     }
+      //   }
 
-    <div class="audio-info">
+      //   // Add event listener for window resize
+      //   window.addEventListener("resize", checkWindowWidth);
 
-      <section id="audioPlayer">
-        <audio 
-          id="myaudio"
-          src="lofi/ColorfulFlowers.mp3"
-          type="audio/mp3"
-          controls
-        ></audio>
-
-    </div>
-
-    <div class="audio-container">
-      <div class="audio-title">
-      <h2>Now Playing: <span id="audio-name">Colorful Flowers by Tokyo Music Walker</span></h2>
-      </div>
-        <div class="progbar">
-          <span id="progbarfill"></span>
-        </div>
-      </section>
-
-      <section class="audio-controls">
-        <button id="loopbtn">
-          <img
-            id="loopimg"
-            src="files/loop.PNG"
-            alt="loopbtn"
-            width="24"
-            height="24"
-          />
-        </button>
-
-        <button id="muteunmutebtn">
-          <img id="muteunmuteimg" src="files/mute.png" alt="muteunmutebtn"
-          width="24" height="24"
-        </button>
-
-        <button id="prevbtn">
-          <img id="previmg" src="files/prev.PNG" alt="prevbtn"
-          width="24" height="24"
-        </button>
-
-        <button id="playpausebtn">
-          <img id="playpauseimg" src="files/play.png" alt="playpausebtn"
-          width="40" height="40"
-        </button>
-
-        <button id="nextbtn">
-          <img id="nextimg" src="files/next.PNG" alt="nextbtn"
-          width="24" height="24"
-        </button>
-
-        <button id="voldownbtn">
-          <img
-            id="voldownimg"
-            src="https://img.icons8.com/ios-glyphs/30/low-volume.png"
-            alt="voldownbtn"
-            width="24"
-            height="24"
-          />
-        </button>
-
-        <button id="volupbtn">
-          <img
-            id="volupimg"
-            src="https://img.icons8.com/ios-glyphs/30/high-volume--v1.png"
-            alt="volupbtn"
-            width="24"
-            height="24"
-          />
-        </button>
-      </section>
-    </div>
-
-    <section class="stopwatch-container">
-      <h3>Study Timer</h3>
-      <div id="stopwatch">00:00:00</div>
-      <section class="stopwatchbtn">
-      <button onclick="startStopwatch()">Start</button>
-      <button onclick="stopStopwatch()">Stop</button>
-      <button onclick="resetStopwatch()">Reset</button>
-      </section>  
-    </section> 
-
-  <a href="credits.html">music credits</a>
-
-  <footer class="footer">
-    <h3>Eden Wu</h3>
-    <p>s4003321 Interactive Media Assignment 2</p>
-    <p>Thank you Rohit :D</p>
-  </footer>
+      //   // Check window width initially
+      //   checkWindowWidth();
+    </script>
   </body>
 </html>

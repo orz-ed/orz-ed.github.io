@@ -1,0 +1,128 @@
+<!-- I chose a context of "Music for relaxation/study". 
+here are my rationale behind the semantics 
+
+I wanted the audio to be the main point of focus
+I went with three section structure
+1. video-contanier: it contains the main video and associated links
+2. audio-controls: it cocntains buttons to control the video
+3. timeline: it contains the buttons to navigate to different steps-->
+
+<!-- Icon images are from adobe stock -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDEN'S ASSIGNMENT 2</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <!-- Google fonts stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Passion+One:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <h1>TIME TO FOCUS!</h1>
+
+    <image src="files/tent.gif" id="tent"></image> 
+
+    <div class="audio-info">
+
+      <section id="audioPlayer">
+        <audio 
+          id="myaudio"
+          src="lofi/ColorfulFlowers.mp3"
+          type="audio/mp3"
+          controls
+        ></audio>
+
+    </div>
+
+    <div class="audio-container">
+      <div class="audio-title">
+      <h2>Now Playing: <span id="audio-name">Colorful Flowers by Tokyo Music Walker</span></h2>
+      </div>
+        <div class="progbar">
+          <span id="progbarfill"></span>
+        </div>
+      </section>
+
+      <section class="audio-controls">
+        <button id="loopbtn">
+          <img
+            id="loopimg"
+            src="files/loop.PNG"
+            alt="loopbtn"
+            width="24"
+            height="24"
+          />
+        </button>
+
+        <button id="muteunmutebtn">
+          <img id="muteunmuteimg" src="files/mute.png" alt="muteunmutebtn"
+          width="24" height="24"
+        </button>
+
+        <button id="prevbtn">
+          <img id="previmg" src="files/prev.PNG" alt="prevbtn"
+          width="24" height="24"
+        </button>
+
+        <button id="playpausebtn">
+          <img id="playpauseimg" src="files/play.png" alt="playpausebtn"
+          width="40" height="40"
+        </button>
+
+        <button id="nextbtn">
+          <img id="nextimg" src="files/next.PNG" alt="nextbtn"
+          width="24" height="24"
+        </button>
+
+        <button id="voldownbtn">
+          <img
+            id="voldownimg"
+            src="https://img.icons8.com/ios-glyphs/30/low-volume.png"
+            alt="voldownbtn"
+            width="24"
+            height="24"
+          />
+        </button>
+
+        <button id="volupbtn">
+          <img
+            id="volupimg"
+            src="https://img.icons8.com/ios-glyphs/30/high-volume--v1.png"
+            alt="volupbtn"
+            width="24"
+            height="24"
+          />
+        </button>
+      </section>
+    </div>
+
+    <section class="stopwatch-container">
+      <h3>Study Timer</h3>
+      <div id="stopwatch">00:00:00</div>
+      <section class="stopwatchbtn">
+      <button onclick="startStopwatch()">Start</button>
+      <button onclick="stopStopwatch()">Stop</button>
+      <button onclick="resetStopwatch()">Reset</button>
+      </section>  
+    </section> 
+
+  <a href="credits.html">music credits</a>
+
+  <footer class="footer">
+    <h3>Eden Wu</h3>
+    <p>s4003321 Interactive Media Assignment 2</p>
+    <p>Thank you Rohit :D</p>
+  </footer>
+  </body>
+</html>
