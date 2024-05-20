@@ -2,7 +2,7 @@ body {
   font-family: "Cutive Mono", monospace;
   font-weight: 400;
   font-style: normal;
-  background: rgb(255, 255, 255);
+  background: #f7f0ed;
   color: rgb(90, 11, 45);
   display: flex;
   flex-direction: column;
@@ -19,6 +19,7 @@ body {
   font-size: 70px;
   position: relative;
   font-weight: 800;
+  color: #e3cdb4;
 }
 
 #rightarw {
@@ -26,9 +27,11 @@ body {
   font-size: 70px;
   position: relative;
   font-weight: 800;
+  color: #e3cdb4;
 }
 
 h1 {
   font-size: 37px;
   font-weight: bold;
+  color: #5c6264;
 }
