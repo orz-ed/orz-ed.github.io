@@ -1,3 +1,5 @@
+//establish playlist ---------------------------------------------------------------
+
 const audioList = [
   {
     name: "Colorful Flowers by Tokyo Music Walker",
@@ -29,13 +31,7 @@ const myAudio = document.querySelector("#myaudio");
 console.log(myAudio);
 const audioName = document.querySelector("#audio-name");
 
-// function playAudio(no) {
-//   myAudio.pause();
-//   myAudio.src = audioList[no].link;
-//   audioName.textContent = audioList[no].name;
-//   myAudio.load();
-//   myAudio.play();
-// }
+//"play" and "pause" buttons ---------------------------------------------------------------
 
 const playPauseBtn = document.querySelector("#playpausebtn");
 console.log(playPauseBtn);
@@ -57,7 +53,7 @@ function toggleAudioPlayback() {
   }
 }
 
-// ---------------------------------------------------------------
+// "previous" and "next" buttons ---------------------------------------------------------------
 
 const prevButton = document.querySelector("#prevbtn");
 console.log(prevButton);
@@ -92,10 +88,10 @@ function playAudioAtIndex(index) {
   myAudio.play();
 }
 
-//to autoplay the next song in the list
+//to autoplay the next song in the list, sourced from https://www.youtube.com/watch?v=lM0g-oNwI48&ab_channel=WebDevMadeEasy
 myAudio.addEventListener("ended", nextTrack);
 
-// ---------------------------------------------------------------
+// loop button ---------------------------------------------------------------
 
 let loop = false;
 
@@ -126,7 +122,7 @@ function loopAudio() {
   console.log("loop is", loop);
 }
 
-// ---------------------------------------------------------------
+// Progress bar ---------------------------------------------------------------
 
 myAudio.addEventListener("timeupdate", updateProgressBar);
 
@@ -141,7 +137,7 @@ function updateProgressBar() {
 }
 
 // allows the progress to be changed upon clicking the progress bar
-// I found the tutorial at m
+// The tutorial was found by Wing at https://img.ly/blog/how-to-build-video-player-in-javascript/
 //this function defines the progress bar moving when its clicked
 function progressClicked(e) {
   const position = (e.offsetX / progressBar.offsetWidth) * myAudio.duration; //defines a 'position' based off of where the mouse lands
@@ -158,7 +154,7 @@ progressBar.addEventListener(
 );
 progressBar.addEventListener("mouseup", () => (mousedown = false));
 
-// ---------------------------------------------------------------
+// "mute" and "unmute" buttons ---------------------------------------------------------------
 
 const muteUnmutebtn = document.querySelector("#muteunmutebtn");
 console.log(muteUnmutebtn);
@@ -178,7 +174,7 @@ function toggleSound() {
   }
 }
 
-// ---------------------------------------------------------------
+// "increase volume" and "decrese volume" buttons ---------------------------------------------------------------
 
 const decreaseVolBtn = document.querySelector("#voldownbtn");
 decreaseVolBtn.addEventListener("click", decreaseVolume);
@@ -216,39 +212,38 @@ var elapsedPausedTime = 0;
 
 function startStopwatch() {
   if (!stopwatchInterval) {
-    startTime = new Date().getTime() - elapsedPausedTime; // get the starting time by subtracting the elapsed paused time from the current time
-    stopwatchInterval = setInterval(updateStopwatch, 1000); // update every second
+    startTime = new Date().getTime() - elapsedPausedTime; 
+    stopwatchInterval = setInterval(updateStopwatch, 1000); 
   }
 }
 
 function stopStopwatch() {
-  clearInterval(stopwatchInterval); // stop the interval
-  elapsedPausedTime = new Date().getTime() - startTime; // calculate elapsed paused time
-  stopwatchInterval = null; // reset the interval variable
+  clearInterval(stopwatchInterval); 
+  elapsedPausedTime = new Date().getTime() - startTime; 
+  stopwatchInterval = null; 
 }
 
 function resetStopwatch() {
-  stopStopwatch(); // stop the interval
-  elapsedPausedTime = 0; // reset the elapsed paused time variable
-  document.getElementById("stopwatch").innerHTML = "00:00:00"; // reset the display
+  stopStopwatch(); 
+  elapsedPausedTime = 0; 
+  document.getElementById("stopwatch").innerHTML = "00:00:00"; 
 }
 
 function updateStopwatch() {
-  var currentTime = new Date().getTime(); // get current time in milliseconds
-  var elapsedTime = currentTime - startTime; // calculate elapsed time in milliseconds
-  var seconds = Math.floor(elapsedTime / 1000) % 60; // calculate seconds
-  var minutes = Math.floor(elapsedTime / 1000 / 60) % 60; // calculate minutes
-  var hours = Math.floor(elapsedTime / 1000 / 60 / 60); // calculate hours
-  var displayTime = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds); // format display time
-  document.getElementById("stopwatch").innerHTML = displayTime; // update the display
-}
+  var currentTime = new Date().getTime(); 
+  var elapsedTime = currentTime - startTime; 
+  var seconds = Math.floor(elapsedTime / 1000) % 60; 
+  var minutes = Math.floor(elapsedTime / 1000 / 60) % 60; 
+  var hours = Math.floor(elapsedTime / 1000 / 60 / 60);
+  var displayTime = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds); 
+  document.getElementById("stopwatch").innerHTML = displayTime; 
 
 function pad(number) {
   // add a leading zero if the number is less than 10
   return (number < 10 ? "0" : "") + number;
 }
 
-// ---------------------------------------------------------------
+// window resize event ---------------------------------------------------------------
 
 window.addEventListener("resize", function () {
   if (window.innerWidth >= "800") {

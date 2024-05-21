@@ -1,3 +1,7 @@
+<!-- This is the landing html page that'll make the users resize their browser to be smaller
+as to lessen the area of distraction on screen. This idea references the website https://endless-summer.richardmille.com/ 
+where the user is asked to make their window size smaller in order to begin the experience-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +11,6 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style2.css" />
 
-    <!-- Google fonts stylesheets -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,32 +29,29 @@
     </div>
 
     <script>
+      //This script was sourced from https://stackoverflow.com/questions/641857/javascript-window-resize-event
       window.addEventListener("resize", function () {
         if (window.innerWidth <= "800") {
           window.location.href = "player.html";
         }
       });
 
+      // The code below was provided by Rohit, however, when I tried changing the
+      // function to change content when resizing the window, the site would glitch and flicker
+      // which forced me to try a different script to achieve the window resize event
+
       //   // the following code will play the audio when user resizes the window to 400px
       //   function checkWindowWidth() {
-      //     // Get current window width
       //     const windowWidth = window.innerWidth;
       //     console.log(windowWidth);
-      //     // Define minimum window width threshold
       //     const minWidthThreshold = 800; // Adjust as needed
-
-      //     // If window width is at or below the minimum threshold, start playing audio
       //     if (windowWidth <= minWidthThreshold) {
       //       window.location.href = "index.html";
       //     } else {
       //       window.location.href = "resize.html";
       //     }
       //   }
-
-      //   // Add event listener for window resize
       //   window.addEventListener("resize", checkWindowWidth);
-
-      //   // Check window width initially
       //   checkWindowWidth();
     </script>
   </body>
