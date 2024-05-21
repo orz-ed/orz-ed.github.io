@@ -243,6 +243,7 @@ function pad(number) {
 }
 
 // window resize event ---------------------------------------------------------------
+// sourced from https://stackoverflow.com/questions/29130776/url-redirect-based-on-screen-width
 
 window.addEventListener("resize", function () {
   if (window.innerWidth >= "800") {
