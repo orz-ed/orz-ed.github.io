@@ -1,5 +1,3 @@
-// establish playlist ---------------------------------------------------------------
-
 const audioList = [
   {
     name: "Colorful Flowers by Tokyo Music Walker",
