@@ -1,18 +1,47 @@
+/* css is used for my chosen action: hover, and also to satisfy the chosen context by providing
+a suitable layout for the context of a video game character selection screen.
+
+I used the row and column class to first seperate the two distinct sections of my screen, 
+referencing https://www.w3schools.com/howto/howto_css_two_columns.asp to guide me through the styling. 
+This would make it easy to distinguish between the character selection section and the character display
+section.
+
+For the character selection section, I chose to go for a grid layout so that all characters can be seen on one
+page, which will make the experience feel cleaner and smoother.
+
+I added a floating animation for the full body character on display to help make the experience feel 
+more dynamic and lively. I chose the up and down float direction as it is often seen in quite a lot of video games, 
+presumably to mimick the breathing of a living creature.
+
+The hover function was added so that there's a clear visual indication of when the player mouses over a certain
+character. I chose the four corners border as it is a very common style that is seen in many console games and 
+would make this feel more familiar to those who have played such games before. It was also direcrly inspired by the
+Mario Kart interface.
+
+The overlay is to indicate the next step of this game experience, however, as this is only a demo, the experience ends 
+once the character has been "selected". The overlay aesthetic is vastly different to the rest of the website as to 
+make a clear distingushment between the demo and the ending of the experience.
+
+I chose a very light, earthy colour palette so that everything doesn't get over-saturated, warm earthy tones also 
+work quite well in this case as all of the characters have some shade of beige/brown*/
+
 body {
   font-family: "Cutive Mono", monospace;
   font-weight: 400;
   font-style: normal;
   padding: 10px;
-  background: #fffafc;
-  color: rgb(74, 3, 34);
-  max-height: 100%;
+  background: #f1e0c5;
+  color: #342a21;
+}
+
+.row {
+  display: flex;
 }
 
 .column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  max-height: 100%;
+  flex: 1; /* additionally, equal width */
+  padding: 1em;
+  /* border: solid; */
 }
 
 /* Clear floats after the columns */
@@ -22,14 +51,13 @@ body {
   clear: both;
 }
 
-.row {
-  max-width: 100%;
-  max-height: 100%;
-  margin: auto;
+.command {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #display {
-  background-color: rgb(246, 243, 239);
   overflow: auto;
   position: relative;
   max-height: 100%;
@@ -42,6 +70,9 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   padding: 10px;
+  margin: auto;
+  justify-content: center;
+  max-height: 85vh;
 }
 
 @keyframes floating {
@@ -59,29 +90,50 @@ body {
 #select {
   display: grid;
   grid-template-columns: auto auto;
+  border: 2px solid #71816d;
+  background-color: #f1e0c5;
 }
 
 #info {
+  background-color: #dbc8ac;
   text-align: center;
+  border: 2px solid #71816d;
+  margin-right: 5%;
+  padding: 20px;
+  width: 80%;
 }
 
-#btn {
-  background-color: #fffafc;
-  border: #fffafc;
+.btn {
+  background-color: #f1e0c5;
+  border: none;
+}
+
+.active {
+  background-color: #dbc8ac;
+  margin: auto;
 }
 
 #confirm {
-  background-color: #f0e2e7;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid rgb(255, 255, 255);
+  background-color: #dbc8ac;
+  border: 2px solid #71816d;
+  color: #71816d;
   cursor: pointer;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  transition-duration: 0.3s;
 }
 
+#confirm:hover {
+  background-color: #71816d;
+  color: #fffafc;
+}
+
+/* I decided to get rid of borders to create that clean look that was also
+present in Mario Kart selection screens, where a border only appears after hover or selection */
 .icons {
-  /* border: solid 2px pink;
-  border-radius: 4px; */
+  margin: auto;
+  /* border: solid 1px #2f2d2d; */
   padding: 10px;
   width: 250px;
   transition: 0.2s linear;
@@ -96,7 +148,7 @@ profiles of characters would be highlighted in games such as the mario kart sele
   --t: 7px; /* the thickness of the border */
   --g: 20px; /* the gap between the border and image */
 
-  outline: var(--t) solid #fc1970; /* the color here */
+  outline: var(--t) solid rgb(113, 129, 109); /* the color here */
   outline-offset: calc(-1 * var(--t));
   mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 /
       calc(100% - var(--s)) calc(100% - var(--s)),
@@ -104,15 +156,36 @@ profiles of characters would be highlighted in games such as the mario kart sele
   transition: 0.2s linear;
 }
 
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
+#overlay {
+  position: fixed;
+  display: none;
   width: 100%;
-  color: #f2f2f2;
-  background: rgb(237, 101, 162);
-  margin-top: 20px;
-  font-family: "Cutive Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(113, 129, 109, 0.7);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#text2 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 20px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }

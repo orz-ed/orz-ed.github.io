@@ -8,6 +8,11 @@
     2024 Semester 1
 -->
 
+<!-- Credits for images:
+The files named "wolf" "witch" "fox" and "red" were all drawn by my friend Kyomi,
+The file "boy" was drawn by my friend Kai,
+And the file "yuzu" was drawn by me-->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,50 +32,57 @@
     />
   </head>
   <body>
+    <div id="overlay" onclick="off()">
+      <div id="text">CHARACTER SELECTED!</div>
+      <div id="text2">thank you for testing the demo</div>
+    </div>
     <div class="row">
       <div class="column" id="display">
         <div id="fullchara">
           <img src="img/yuzu.png" id="fullimg" />
         </div>
-        <div id="info">difficulty ★★★☆☆</div>
+        <div class="command">
+          <div id="info">yuzu ★★★☆☆</div>
+          <div><button onclick="on()" id="confirm">✔</button></div>
+        </div>
       </div>
       <div class="column" id="select">
-        <button id="btn">
+        <button class="btn">
           <img
             src="img/yuzuicon.png"
             class="icons"
             onclick="ChangeCharacter('yuzu')"
           />
         </button>
-        <button id="btn">
+        <button class="btn">
           <img
             src="img/wolficon.png"
             class="icons"
             onclick="ChangeCharacter('wolf')"
           />
         </button>
-        <button id="btn">
+        <button class="btn">
           <img
             src="img/witchicon.png"
             class="icons"
             onclick="ChangeCharacter('witch')"
           />
         </button>
-        <button id="btn">
+        <button class="btn">
           <img
             src="img/redicon.png"
             class="icons"
             onclick="ChangeCharacter('red')"
           />
         </button>
-        <button id="btn">
+        <button class="btn">
           <img
             src="img/foxicon.png"
             class="icons"
             onclick="ChangeCharacter('fox')"
           />
         </button>
-        <button id="btn">
+        <button class="btn">
           <img
             src="img/boyicon.png"
             class="icons"
@@ -78,7 +90,6 @@
           />
         </button>
       </div>
-      <butto id="confirm">confirm selection</button>
     </div>
   </body>
 </html>
